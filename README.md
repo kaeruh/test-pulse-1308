@@ -1,4 +1,4 @@
-## Welcome to Test at It Happens
+## Welcome to Test at Pulse
 Siga as instruções abaixo.
 
 ### Passos
