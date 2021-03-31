@@ -1,0 +1,31 @@
+prova sql
+
+
+Escrever uma consulta que retorne todos os produtos com quantidade maior ou
+igual a 100
+
+	select * from produto where quantidade <=100;
+
+Escrever uma consulta que traga todos os produtos que têm estoque para a filial de
+código 60
+	
+	select * from produtos,estoque left join pedidoestoque as pe on pedidoestoque.fkfilial=idfilial where pe.idFilial=60;
+
+Escrever consulta que liste todos os campos para o domínio PedidoEstoque e
+ItensPedido filtrando apenas o produto de código 7993
+
+	select * from Pedidoestoque, ItensPedido, where itensPedido.FKprodutoItens =7993;
+
+Escrever uma consulta que liste os pedidos com suas respectivas formas de
+pagamento.
+
+	select * from PedidoEstoque, FormaPagamento group by pedidoestoque.fkformapgmento=formapagamento.idformapagamento;
+
+Escrever um consulta para sumarizar e bater os valores da capa do pedido com os
+valores dos ítens de pedido
+	
+	select idpedidoestoque, quantidade, nome, tipo SUM(ValorUnitario) as vu from  PedidoEstoque where vu=valortotal;
+Escrever uma consulta para sumarizar o total dos itens por pedido e que filtre
+apenas os pedidos no qual a soma total da quantidade de ítens de pedido seja maior
+que 10
+	select idItensPedido,status,quantidade, SUM(Quantidade) as total, ValorUnitario,Valortotal from ItensPedido group total where quantidade < 10;
